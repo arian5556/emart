@@ -1,0 +1,19 @@
+.logo{
+    width: 4em;
+   margin-right: 15px;
+}
+
+.header{
+    background-color: rgb(148 152 134 / 57%);
+}
+.note{
+    margin-top: 7em;
+    margin-bottom: 7em;
+}
+.bg{
+    background-color: #949886;
+    color: white;
+}
+.font{
+    font-family:'Times New Roman', Times, serif;
+}

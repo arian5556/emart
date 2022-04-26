@@ -1,0 +1,26 @@
+.product-name{
+  font-weight: 500; 
+}
+
+.cart-button:hover{
+  box-shadow: 2px 5px 8px gray;
+}
+
+.product:hover{
+  transform: scale(1.05);
+}
+
+.review{
+   box-shadow: 2px 2px 10px gray;
+}
+
+.manage{
+  border:5px solid rgb(148 152 134 / 57%);
+  border-radius: 15px;
+}
+
+.ship{
+  height:65vh;
+  width: 100%;
+
+}

@@ -1,0 +1,23 @@
+.search-container{
+    background-color: #949886;
+    text-align: center;
+    padding: 1.5em;
+}
+.search-container input{
+    width: 75%;
+    padding: 5px;
+}
+
+
+.pagination button{
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.pagination .selected{
+    background-color: goldenrod;
+    color: white;
+}
+
+.paymentDetail{
+    border-radius: 25px ;
+}
