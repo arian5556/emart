@@ -11,7 +11,7 @@ const ManageOrder = () => {
   const { user } = useAuthContext();
   useEffect(() => {
     fetch(
-      `http://localhost:5000/orders?email=${user.email}`,
+      `https://obscure-basin-04556.herokuapp.com/orders?email=${user.email}`,
       {
         headers: {
           authorization: `Bearer ${localStorage.getItem("idToken")}`,

@@ -18,7 +18,7 @@ const Shop = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/products?page=${Page}&&size=${size}`
+      `https://obscure-basin-04556.herokuapp.com/products?page=${Page}&&size=${size}`
     )
       .then((res) => res.json())
       .then((data) => {

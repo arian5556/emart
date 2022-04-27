@@ -27,7 +27,7 @@ const CheckOutForm = ({ grandtotal }) => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("http://localhost:5000/create-payment-intent", {
+    fetch("https://obscure-basin-04556.herokuapp.com/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ price: grandtotal }),
@@ -88,7 +88,7 @@ const CheckOutForm = ({ grandtotal }) => {
       data.order = savedCart;
       data.payment = payment;
 
-      fetch("http://localhost:5000/orders", {
+      fetch("https://obscure-basin-04556.herokuapp.com/orders", {
         method: "POST",
         headers: {
           "content-type": "application/json",

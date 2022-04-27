@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "emart-8f5c9"
-  }
+    "default": "emart-d064b",
+    "stag": "emart-d064b"
+  },
+  "targets": {}
 }
