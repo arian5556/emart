@@ -5,8 +5,6 @@ const useCart = () => {
   const [cart, getCart] = useState([]);
   useEffect(() => {
     const savedCart = displayData();
-    console.log("cart is", savedCart);
-
     const keys = Object.keys(savedCart);
 
     fetch("https://obscure-basin-04556.herokuapp.com/products/bykeys", {
@@ -18,7 +16,6 @@ const useCart = () => {
     })
       .then((res) => res.json())
       .then((pro) => {
-        console.log("hello", pro);
         if (pro.length) {
           const save = [];
           for (const key in savedCart) {

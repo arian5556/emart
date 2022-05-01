@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField } from '@mui/material';
 const Footer = () => {
-   
+    const [email,setEmail]=useState('')
     return (
         <div style={{backgroundColor:"#949886" ,color:'white'}}>
             <div className="container-fluid px-5">
         <div  className="row py-5">
            <div className="col-sm-12 col-md-6 col-lg-3  text-center text-lg-start">
-               <h2 className="fw-bold text-warning">E mart</h2>
+               <h2 className="fw-bold "><span className='fs-1 text-warning'>e</span>mart</h2>
                <p className="lh-lg fw-light">We make yourself infused with the spirit of contemporary design and minimalist philosophies.</p>
             </div> 
              
@@ -35,7 +35,14 @@ const Footer = () => {
           label="Email" 
           name='email'
           type='email'
-          variant="standard" /> 
+          onChange={e=>setEmail(e.target.value)}
+          variant="standard"
+          onKeyDown={(e) => {
+            if (e.code === "Enter" && email ) {
+              alert(`${email} has been subscribed`)
+              e.preventDefault()
+            }
+          }} /> 
        
             </div>
             

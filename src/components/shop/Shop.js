@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Grid } from "@mui/material";
+import { Box, CircularProgress, Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -79,14 +79,15 @@ const Shop = () => {
           </div>
         </Grid>
         <Grid item xs={12} md={9} sm={9} className="border-end">
-          {search[0] ? (
-            search.map((product) => (
+          {product[0] ? (
+           search[0]? search.map((product) => (
               <Product key={product.key} products={product} add={addProduct}>
                 {" "}
               </Product>
             ))
+            :<Typography className="text-center mt-3" variant="h3">No Result Found</Typography>
           ) : (
-            <CircularProgress className="ms-5 mt-5" />
+              <CircularProgress className="ms-5 mt-5" />
           )}
         </Grid>
         <Grid item xs={12} md={3} sm={3} className="text-md-start text-center ">

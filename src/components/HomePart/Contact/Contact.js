@@ -1,7 +1,8 @@
 import { Box, TextField } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 const Contact = () => {
+ const [email,setEmail]=useState('')
   return (
     <Box sx={{ py: 15, my: 15 }} className="bg  text-center">
       <h1 className="fs-1 mb-5">
@@ -13,7 +14,14 @@ const Contact = () => {
         label="Email"
         name="email"
         type="email"
+        onChange={e=>setEmail(e.target.value)}
         variant="standard"
+        onKeyDown={(e) => {
+          if (e.code === "Enter" && email ) {
+            alert(`${email} has been subscribed`)
+            e.preventDefault()
+          }
+        }}
       />
     </Box>
   );

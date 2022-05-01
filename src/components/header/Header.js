@@ -15,9 +15,9 @@ const Header = () => {
       <Navbar fixed="top" className="header" collapseOnSelect expand="lg">
         <Navbar.Brand as={NavLink} to="/">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emart_Logo.svg/1200px-Emart_Logo.svg.png"
-            width="100"
-            height="28"
+            src="https://lh3.googleusercontent.com/KN_ED5agJkW4SWMJXnZz4KSIa7xC41aE8JZkcJsbr4Ci4ek3YCCsMowHnWqHiSGEH3o"
+            width="60"
+            height="30"
             className="d-inline-block align-top ms-5"
             alt="React Bootstrap logo"
           />

@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, {useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useHistory } from "react-router";
 import { deleteFromDb } from "../../utilities/fakedb";
@@ -8,11 +8,28 @@ import useCart from "../hoo/UseCart";
 import Review from "../Review/Review";
 
 const Order = () => {
+  
   const [cart, getCart] = useCart();
-  const removeitem = (p) => {
-    const deleted = cart.filter((item) => p !== item.key);
+  const [load,setload]=useState(false);
+  useEffect(()=>{
+   getCart(cart)
+   setload(false)
+  },[load])
+
+  const removeitem = (p) => { 
+   if( cart.filter(c=>c.key==p)[0].quantity==1)
+   { const deleted = cart.filter((item) => p !== item.key);
     getCart(deleted);
     deleteFromDb(p);
+  }
+
+    else{
+      deleteFromDb(p);
+      const deleted = cart.filter(c=>c.key==p)[0]
+      deleted.quantity=deleted.quantity-1
+      getCart(cart)
+      setload(true)
+    }
   };
   const history = useHistory();
   const placerOrder = () => {
@@ -23,7 +40,7 @@ const Order = () => {
       <Grid container spacing={2} className="p-2 mb-3 mt-5">
         <Grid item xs={12} md={9} sm={9}>
           {cart.map((item) => (
-            <Review key={item.key} products={item} remove={removeitem}></Review>
+            <Review key={item.key} products={item} remove={removeitem} ></Review>
           ))}
         </Grid>
         <Grid item xs={12} md={3} sm={3} className="text-md-start text-center">
